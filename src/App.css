@@ -2,6 +2,17 @@
   letter-spacing: 0.5px;
 }
 
+@media (max-width:2500px) {
+  .vertical_slider {
+    overflow: hidden !important;
+    height: 100vh !important;
+  }
+
+  .slick-list {
+    height: 100% !important;
+  }
+}
+
 .nav_link::before {
   content: '';
   position: absolute;
@@ -210,6 +221,74 @@ ul {
   right: 20px !important;
 }
 
+.slick-slide p {
+  opacity: 5% !important;
+}
+
+.slick-track .slick-current+.slick-slide p {
+  opacity: 70% !important;
+}
+
+.slick-track .slick-current+*+.slick-slide p {
+  opacity: 60% !important;
+}
+
+.slick-track .slick-current+*+*+.slick-slide p {
+  opacity: 50% !important;
+}
+
+.slick-track .slick-current+*+*+*+.slick-slide p {
+  opacity: 40% !important;
+}
+
+.slick-track .slick-current+*+*+*+*+.slick-slide p {
+  opacity: 30% !important;
+}
+
+.slick-track .slick-current+*+*+*+*+*+.slick-slide p {
+  opacity: 20% !important;
+}
+
+.slick-track .slick-current+*+*+*+*+*+*+.slick-slide p {
+  opacity: 10% !important;
+}
+
+.slick-track .slick-current+*+*+*+*+*+*+*+.slick-slide p {
+  opacity: 5% !important;
+}
+
+.slick-slide:has(+ .slick-current) p {
+  opacity: 70% !important;
+}
+
+.slick-slide:has(+*+ .slick-current) p {
+  opacity: 60% !important;
+}
+
+.slick-slide:has(+*+*+.slick-current) p {
+  opacity: 50% !important;
+}
+
+.slick-slide:has(+*+*+*+ .slick-current) p {
+  opacity: 40% !important;
+}
+
+.slick-slide:has(+*+*+*+*+ .slick-current) p {
+  opacity: 30% !important;
+}
+
+.slick-slide:has(+*+*+*+*+*+ .slick-current) p {
+  opacity: 20% !important;
+}
+
+.slick-slide:has(+*+*+*+*+*+*+.slick-current) p {
+  opacity: 10% !important;
+}
+
+.slick-slide:has(+*+*+*+*+*+*+*+.slick-current) p {
+  opacity: 5% !important;
+}
+
 @media (min-width:576px) {
   .vertical_slider .slick-slide p {
     font-size: 42px !important;
@@ -337,73 +416,4 @@ ul {
   .navbar_nav.show {
     right: 0;
   }
-}
-
-.slick-slide p {
-  opacity: 5% !important;
-}
-
-
-.slick-track .slick-current+.slick-slide p {
-  opacity: 80% !important;
-}
-
-.slick-track .slick-current+*+.slick-slide p {
-  opacity: 70% !important;
-}
-
-.slick-track .slick-current+*+*+.slick-slide p {
-  opacity: 60% !important;
-}
-
-.slick-track .slick-current+*+*+*+.slick-slide p {
-  opacity: 50% !important;
-}
-
-.slick-track .slick-current+*+*+*+*+.slick-slide p {
-  opacity: 40% !important;
-}
-
-.slick-track .slick-current+*+*+*+*+*+.slick-slide p {
-  opacity: 30% !important;
-}
-
-.slick-track .slick-current+*+*+*+*+*+*+.slick-slide p {
-  opacity: 20% !important;
-}
-
-.slick-track .slick-current+*+*+*+*+*+*+*+.slick-slide p {
-  opacity: 10% !important;
-}
-
-.slick-slide:has(+ .slick-current) p {
-  opacity: 80% !important;
-}
-
-.slick-slide:has(+*+ .slick-current) p {
-  opacity: 70% !important;
-}
-
-.slick-slide:has(+*+*+ .slick-current) p {
-  opacity: 60% !important;
-}
-
-.slick-slide:has(+*+*+*+ .slick-current) p {
-  opacity: 50% !important;
-}
-
-.slick-slide:has(+*+*+*+*+ .slick-current) p {
-  opacity: 40% !important;
-}
-
-.slick-slide:has(+*+*+*+*+*+ .slick-current) p {
-  opacity: 30% !important;
-}
-
-.slick-slide:has(+*+*+*+*+*+*+ .slick-current) p {
-  opacity: 20% !important;
-}
-
-.slick-slide:has(+*+*+*+*+*+*+*+ .slick-current) p {
-  opacity: 10% !important;
 }

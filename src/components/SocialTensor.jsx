@@ -13,28 +13,64 @@ import { SLIDER_LIST } from "../common/Helper";
 const SocialTensor = () => {
   const settings = {
     centerMode: true,
+<<<<<<< HEAD
     slidesToShow: 20,
     centerPadding: "0px",
     // verticalSwiping: true,
+=======
+>>>>>>> ec102b341a1023d94b7a9b5b504a00c3ef6192f8
     infinite: true,
+    initialSlide: Math.floor(SLIDER_LIST.length / 2),
+    slidesToShow: 18.5,
+    centerPadding: "0px",
+    verticalSwiping: true,
     dots: false,
     arrows: false,
     vertical: true,
-    focusOnSelect: true,
     swipeToSlide: true,
     speed: 2000,
     pauseOnHover: false,
+<<<<<<< HEAD
     initialSlide: Math.floor(SLIDER_LIST.length / 2),
     touchThreshold: 1, // Adjusted value
+=======
+    touchThreshold: 1,
+>>>>>>> ec102b341a1023d94b7a9b5b504a00c3ef6192f8
     touchMovementThreshold: 1,
     responsive: [
       {
-        breakpoint: 576,
+        breakpoint: 1920,
         settings: {
-          slidesToShow: 9,
-        },
+          slidesToShow: 17.5,
+        }
       },
-    ],
+      {
+        breakpoint: 1536,
+        settings: {
+          slidesToShow: 10,
+        }
+      },
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 10,
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 8,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 14,
+          autoplay: true,
+        autoplaySpeed: 2000, 
+        }
+      },
+    ]
   };
 
   const [isHovered, setIsHovered] = useState(false);
@@ -42,7 +78,7 @@ const SocialTensor = () => {
   const sliderRef = useRef(null);
 
 
-  const handleWheel = (e) => {
+  const HANDLE_WHEEL = (e) => {
     if (e.deltaY > 0) {
       sliderRef.current.slickNext();
     } else {
@@ -75,8 +111,8 @@ const SocialTensor = () => {
   };
 
   return (
-    <div className="overflow-hidden vh-100 bg-black d-flex flex-column position-relative scroll_behave" onWheel={handleWheel}>
-      <div className="d-sm-block d-none branding_padding">
+    <div className="overflow-hidden min-vh-100 bg-black d-flex flex-column position-relative scroll_behave" onWheel={HANDLE_WHEEL}>
+      <div className="d-sm-block d-none branding_padding position-absolute z-3">
         <a href="/">
           <img src={logo} alt="logo" />
         </a>
@@ -93,6 +129,7 @@ const SocialTensor = () => {
                 onMouseOver={HANDLE_MOUSE_OVER}
                 onMouseOut={HANDLE_MOUSE_OUT}
                 onClick={HANDLE_SHOW}
+                style={{fontSize:index === 0 && '80px' }}
               >
                 {item}
               </p>

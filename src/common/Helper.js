@@ -10,6 +10,7 @@ export const SLIDER_LIST = [
     "INFINI",
     "Aperture",
     "INFINI",
+<<<<<<< HEAD
     "THELASTONE",
     "NicheTensor",
     "INFINI",
@@ -21,3 +22,13 @@ export const SLIDER_LIST = [
     "Aperture",
     "INFINI",
 ];
+=======
+    "Aperture",
+    "NicheTensor",
+    "Aperture",
+    "THELASTONE",
+    "INFINI",
+    "THELASTONE",
+    "Aperture",
+];
+>>>>>>> ec102b341a1023d94b7a9b5b504a00c3ef6192f8
