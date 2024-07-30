@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import logo from "../assets/images/svg/logo-nav.svg";
 import social_sensor from "../assets/images/webp/social-sensor.webp";
 import social_tensor from "../assets/images/webp/social-tensor.webp";
@@ -13,20 +13,20 @@ import { SLIDER_LIST } from "../common/Helper";
 const SocialTensor = () => {
   const settings = {
     centerMode: true,
-    slidesToShow: 11,
+    slidesToShow: 20,
     centerPadding: "0px",
-    verticalSwiping: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    // verticalSwiping: true,
     infinite: true,
     dots: false,
     arrows: false,
-    slidesToScroll: 1,
     vertical: true,
-    speed: 1000,
+    focusOnSelect: true,
+    swipeToSlide: true,
+    speed: 2000,
     pauseOnHover: false,
     initialSlide: Math.floor(SLIDER_LIST.length / 2),
-    easing: "ease-out",
+    touchThreshold: 1, // Adjusted value
+    touchMovementThreshold: 1,
     responsive: [
       {
         breakpoint: 576,
@@ -39,7 +39,16 @@ const SocialTensor = () => {
 
   const [isHovered, setIsHovered] = useState(false);
   const [show, setShow] = useState(true);
+  const sliderRef = useRef(null);
 
+
+  const handleWheel = (e) => {
+    if (e.deltaY > 0) {
+      sliderRef.current.slickNext();
+    } else {
+      sliderRef.current.slickPrev();
+    }
+  };
   const HANDLE_MOUSE_OVER = (e) => {
     const centerSlide = e.target.closest(".slick-center p");
     if (centerSlide) {
@@ -66,14 +75,14 @@ const SocialTensor = () => {
   };
 
   return (
-    <div className="overflow-hidden vh-100 bg-black d-flex flex-column position-relative">
+    <div className="overflow-hidden vh-100 bg-black d-flex flex-column position-relative scroll_behave" onWheel={handleWheel}>
       <div className="d-sm-block d-none branding_padding">
         <a href="/">
           <img src={logo} alt="logo" />
         </a>
       </div>
       <div className="d-flex flex-column flex-grow-1 justify-content-center align-items-center">
-        <Slider {...settings} className="vertical_slider">
+        <Slider {...settings} ref={sliderRef} className="vertical_slider">
           {SLIDER_LIST.map((item, index) => (
             <div
               className="d-flex align-items-center justify-content-center"
@@ -170,4 +179,3 @@ const SocialTensor = () => {
 };
 
 export default SocialTensor;
-

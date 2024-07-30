@@ -95,8 +95,6 @@ ul {
   font-size: 80px;
   color: #FFFFFF !important;
   opacity: 1 !important;
-  color: #FFFFFF !important;
-  opacity: 1 !important;
 }
 
 .vertical_slider .slick-center p:hover {
@@ -191,7 +189,7 @@ ul {
 .vertical_slider .slick-slide p {
   font-size: 32px !important;
   color: #FFFFFF;
-  opacity: 0.25;
+  /* opacity: 0.20; */
 }
 
 .vertical_slider .slick-slide.slick-active.slick-center.slick-current p {
@@ -207,11 +205,16 @@ ul {
   cursor: pointer;
 }
 
+.hovered.common_box {
+  top: 20px !important;
+  right: 20px !important;
+}
+
 @media (min-width:576px) {
   .vertical_slider .slick-slide p {
     font-size: 42px !important;
     color: #FFFFFF;
-    opacity: 0.25;
+    opacity: 0.20;
   }
 
   .slider_gradient {
@@ -276,11 +279,6 @@ ul {
     cursor: pointer;
   }
 
-  .common_box_position.hovered {
-    top: 20px !important;
-    right: 20px !important;
-  }
-
   .px_30 {
     padding-left: 30px !important;
     padding-right: 30px !important;
@@ -339,4 +337,73 @@ ul {
   .navbar_nav.show {
     right: 0;
   }
+}
+
+.slick-slide p {
+  opacity: 5% !important;
+}
+
+
+.slick-track .slick-current+.slick-slide p {
+  opacity: 80% !important;
+}
+
+.slick-track .slick-current+*+.slick-slide p {
+  opacity: 70% !important;
+}
+
+.slick-track .slick-current+*+*+.slick-slide p {
+  opacity: 60% !important;
+}
+
+.slick-track .slick-current+*+*+*+.slick-slide p {
+  opacity: 50% !important;
+}
+
+.slick-track .slick-current+*+*+*+*+.slick-slide p {
+  opacity: 40% !important;
+}
+
+.slick-track .slick-current+*+*+*+*+*+.slick-slide p {
+  opacity: 30% !important;
+}
+
+.slick-track .slick-current+*+*+*+*+*+*+.slick-slide p {
+  opacity: 20% !important;
+}
+
+.slick-track .slick-current+*+*+*+*+*+*+*+.slick-slide p {
+  opacity: 10% !important;
+}
+
+.slick-slide:has(+ .slick-current) p {
+  opacity: 80% !important;
+}
+
+.slick-slide:has(+*+ .slick-current) p {
+  opacity: 70% !important;
+}
+
+.slick-slide:has(+*+*+ .slick-current) p {
+  opacity: 60% !important;
+}
+
+.slick-slide:has(+*+*+*+ .slick-current) p {
+  opacity: 50% !important;
+}
+
+.slick-slide:has(+*+*+*+*+ .slick-current) p {
+  opacity: 40% !important;
+}
+
+.slick-slide:has(+*+*+*+*+*+ .slick-current) p {
+  opacity: 30% !important;
+}
+
+.slick-slide:has(+*+*+*+*+*+*+ .slick-current) p {
+  opacity: 20% !important;
+}
+
+.slick-slide:has(+*+*+*+*+*+*+*+ .slick-current) p {
+  opacity: 10% !important;
 }
